@@ -15,7 +15,7 @@
   {%for i in pole%}
 
   <div class="tile tile-small" id="day-{{i}}" data-day="{{i}}">
-    <a href="#">{{i}}</a>
+    <a href="#"><span class="tile-number">{{i}}</span></a>
   </div>
 
   {%endfor%}
@@ -30,9 +30,8 @@
   function openPresents() {
     document.getElementById(`day-${currentDay.toString()}`).className =
       "tile tile-today-small";
-    document.getElementById(
-      `day-${currentDay.toString()}`
-    ).href = `{{ url_for('singles')}}`;
+    document.getElementById(`day-${currentDay.toString()}`).href =
+      "{{ url_for('singles')}}";
 
     const tiles = document
       .getElementById("adventCalendar")
@@ -44,18 +43,6 @@
         document.getElementById(tile.id).className = "tile tile-past-small";
       }
     }
-
-    /*    for (let date of pole) {
-      if (date < currentDay) {
-        if (date === dateWithLargeBox) {
-          document.getElementById(date.toString()).className =
-            "tile tile-past-large";
-        } else {
-          document.getElementById(date.toString()).className =
-            "tile tile-past-small";
-        }
-      }
-    }*/
   }
 </script>
 <script>
@@ -99,8 +86,13 @@
     background-image: url("../static/minboxopen.png");
   }
 
-  .tile-small > span {
+  .tile-number {
+    position: absolute;
+    bottom: 0;
     left: 2.8rem;
+    color: white !important;
+    font-family: "Impact", serif;
+    font-size: 2rem;
   }
 
   .tile-large {
