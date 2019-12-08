@@ -48,21 +48,29 @@ div.about {
 }
 h1 
 {
-  font-family: 'Passion One', cursive;
+  font-family: 'Titillium Web', sans-serif;
   font-size: 5em;
   margin-top: 40px;
   text-align: center;
   letter-spacing: -2px;
 }
 h2 {
-   font-family: 'Passion One', cursive;
+  font-family: 'Titillium Web', sans-serif;
   font-size: 3em;
   margin-top: 40px;
   text-align: center;
   letter-spacing: -2px;
 }
 h3 {
-  font-family: 'Passion One', cursive;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1.7em;
+  font-weight: 100;
+  margin-top: 30px;
+  text-align: left;
+  letter-spacing: -1px;
+}
+h4 {
+  font-family: 'Titillium Web', sans-serif;
   font-size: 1.7em;
   font-weight: 100;
   margin-top: 30px;
@@ -71,11 +79,21 @@ h3 {
 }
 h5 
 {
-  font-family: 'Passion One', cursive;
-  font-size: 1em;
-  margin-top: 40px;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1.4em;
+  margin-top: 100px;
+  text-align: left;
+  letter-spacing: -1px;
+}
+
+h6
+{
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 1.7em;
+  font-weight: 100;
+  margin-top: 30px;
   text-align: center;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
 }
 .menu {
   float: right;

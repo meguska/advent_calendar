@@ -25,6 +25,10 @@ def pernicky(id):
     #pernicky = db.pernicky(id)
     return render_template("pernicky.html")
 
+@app.route('/pernicek8/')
+def pernicek8():
+    return render_template("pernicek8.html")
+
 @app.route('/singles/')
 def singles():
    return render_template("singles.html")
