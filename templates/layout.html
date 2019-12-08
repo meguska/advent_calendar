@@ -7,8 +7,11 @@
      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <title>AdventníKalendář</title>
      <!-- Bootstrap CSS -->
-     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+     
      <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+     <link href="https://fonts.googleapis.com/css?family=Passion+One:700|Ubuntu+Mono&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+     
      <style>
      .hompage_content {
        width:90%;
@@ -20,6 +23,7 @@
 
 </head>
 <body style="background-color:white;">
+    <a class="navbar-brand uzke" href="{{ url_for('home') }}"><img src="/static/logo.jpg" class="img-fluid" alt="LOGO" width=50px></a>
     <a class="navbar-brand" href="{{ url_for('home') }}"><h6 style="color:black;">Za klidné Vánoce</h6></a>
     <br>
 
