@@ -26,44 +26,44 @@
 
 <div class="container advent-calendar ">
   <div class="advent-calendar-row">
-    <div class="tile tile-small"><span class="test">1</span></div>
-    <div class="tile tile-small tile-center">2</div>
-    <div class="tile tile-large tile-last">3</div>
+    <div class="tile tile-small"><span>1</span></div>
+    <div class="tile tile-small tile-center"><span>2</span></div>
+    <div class="tile tile-large tile-last"><span>3</span></div>
   </div>
   <div class="advent-calendar-row">
-    <div class="tile tile-small">4</div>
-    <div class="tile tile-large tile-center">5</div>
-    <div class="tile tile-small tile-last">6</div>
+    <div class="tile tile-small"><span>4</span></div>
+    <div class="tile tile-large tile-center"><span>5</span></div>
+    <div class="tile tile-small tile-last"><span>6</span></div>
   </div>
   <div class="advent-calendar-row">
-    <div class="tile tile-large">7</div>
-    <div class="tile tile-small tile-center">8</div>
-    <div class="tile tile-small tile-last">9</div>
+    <div class="tile tile-large"><span>7</span></div>
+    <div class="tile tile-small tile-center"><span>8</span></div>
+    <div class="tile tile-small tile-last"><span>9</span></div>
   </div>
   <div class="advent-calendar-row">
-    <div class="tile tile-small">10</div>
-    <div class="tile tile-small tile-center">11</div>
-    <div class="tile tile-large tile-last">12</div>
+    <div class="tile tile-small"><span>10</span></div>
+    <div class="tile tile-small tile-center"><span>11</span></div>
+    <div class="tile tile-large tile-last"><span>12</span></div>
   </div>
   <div class="advent-calendar-row">
-    <div class="tile tile-small">13</div>
-    <div class="tile tile-large tile-center">14</div>
-    <div class="tile tile-small tile-last">15</div>
+    <div class="tile tile-small"><span>13</span></div>
+    <div class="tile tile-large tile-center"><span>14</span></div>
+    <div class="tile tile-small tile-last"><span>15</span></div>
   </div>
   <div class="advent-calendar-row">
-    <div class="tile tile-large">16</div>
-    <div class="tile tile-small tile-center">17</div>
-    <div class="tile tile-small tile-last">18</div>
+    <div class="tile tile-large"><span>16</span></div>
+    <div class="tile tile-small tile-center"><span>17</span></div>
+    <div class="tile tile-small tile-last"><span>18</span></div>
   </div>
   <div class="advent-calendar-row">
-    <div class="tile tile-small">19</div>
-    <div class="tile tile-large tile-center">20</div>
-    <div class="tile tile-small tile-last">21</div>
+    <div class="tile tile-small"><span>19</span></div>
+    <div class="tile tile-large tile-center"><span>20</span></div>
+    <div class="tile tile-small tile-last"><span>21</span></div>
   </div>
   <div class="advent-calendar-row">
-    <div class="tile tile-small">22</div>
-    <div class="tile tile-small tile-center">23</div>
-    <div class="tile tile-large tile-last">24</div>
+    <div class="tile tile-small"><span>22</span></div>
+    <div class="tile tile-small tile-center"><span>23</span></div>
+    <div class="tile tile-large tile-last"><span>24</span></div>
   </div>
 </div>
 
@@ -78,9 +78,6 @@
 </script>
 
 <style>
-  .test {
-    font-family: "Impact";
-  }
   .advent-calendar {
     width: 50rem;
     margin: 0 auto 3rem;
@@ -98,6 +95,15 @@
     background-repeat: no-repeat;
     background-origin: content-box;
     background-position: center;
+    position: relative;
+  }
+
+  .tile > span {
+    font-family: "Impact", serif;
+    position: absolute;
+    bottom: 0;
+    font-size: 2rem;
+    color: white;
   }
 
   .tile-small {
@@ -105,18 +111,18 @@
     background-image: url("../static/minbox.png");
   }
 
+  .tile-small > span {
+    left: 2.8rem;
+  }
+
   .tile-large {
     width: 50%;
     background-image: url("../static/maxbox.png");
   }
-/*
-  .tile-center {
-    background-position: center;
-  }
 
-  .tile-last {
-    background-position: right;
-  }*/
+  .tile-large > span {
+    left: 3rem;
+  }
 
   .advent-calendar-footer {
     height: 0.3rem;
