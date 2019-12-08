@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap');
 body {
   margin: 0;
   padding: 0;
@@ -48,21 +49,21 @@ div.about {
 }
 h1 
 {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Rubik Mono One', sans-serif;
   font-size: 5em;
   margin-top: 40px;
   text-align: center;
   letter-spacing: -2px;
 }
 h2 {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Rubik Mono One', sans-serif;
   font-size: 3em;
   margin-top: 40px;
   text-align: center;
   letter-spacing: -2px;
 }
 h3 {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Rubik Mono One', sans-serif;
   font-size: 1.7em;
   font-weight: 100;
   margin-top: 30px;
@@ -70,7 +71,7 @@ h3 {
   letter-spacing: -1px;
 }
 h4 {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Rubik Mono One', sans-serif;
   font-size: 1.7em;
   font-weight: 100;
   margin-top: 30px;
@@ -79,7 +80,7 @@ h4 {
 }
 h5 
 {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Rubik Mono One', sans-serif;
   font-size: 1.4em;
   margin-top: 100px;
   text-align: left;
