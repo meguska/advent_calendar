@@ -22,7 +22,7 @@ def sdetmi():
     pole= array.array('i', (i for i in range(1,25)))
     random.shuffle(pole)
     print(pole)
-    return render_template("sdetmi.html")
+    return render_template("sdetmi.html", pole=pole)
 
 @app.route('/pernicky/<id>', methods=['GET'])
 def pernicky(id):
