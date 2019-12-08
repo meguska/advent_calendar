@@ -23,58 +23,41 @@
 </div>
 
 <div class="advent-calendar-footer"></div>
-
-<div class="container advent-calendar ">
-  <div class="advent-calendar-row">
-    <div class="tile tile-small"><span>1</span></div>
-    <div class="tile tile-small tile-center"><span>2</span></div>
-    <div class="tile tile-large tile-last"><span>3</span></div>
-  </div>
-  <div class="advent-calendar-row">
-    <div class="tile tile-small"><span>4</span></div>
-    <div class="tile tile-large tile-center"><span>5</span></div>
-    <div class="tile tile-small tile-last"><span>6</span></div>
-  </div>
-  <div class="advent-calendar-row">
-    <div class="tile tile-large"><span>7</span></div>
-    <div class="tile tile-small tile-center"><span>8</span></div>
-    <div class="tile tile-small tile-last"><span>9</span></div>
-  </div>
-  <div class="advent-calendar-row">
-    <div class="tile tile-small"><span>10</span></div>
-    <div class="tile tile-small tile-center"><span>11</span></div>
-    <div class="tile tile-large tile-last"><span>12</span></div>
-  </div>
-  <div class="advent-calendar-row">
-    <div class="tile tile-small"><span>13</span></div>
-    <div class="tile tile-large tile-center"><span>14</span></div>
-    <div class="tile tile-small tile-last"><span>15</span></div>
-  </div>
-  <div class="advent-calendar-row">
-    <div class="tile tile-large"><span>16</span></div>
-    <div class="tile tile-small tile-center"><span>17</span></div>
-    <div class="tile tile-small tile-last"><span>18</span></div>
-  </div>
-  <div class="advent-calendar-row">
-    <div class="tile tile-small"><span>19</span></div>
-    <div class="tile tile-large tile-center"><span>20</span></div>
-    <div class="tile tile-small tile-last"><span>21</span></div>
-  </div>
-  <div class="advent-calendar-row">
-    <div class="tile tile-small"><span>22</span></div>
-    <div class="tile tile-small tile-center"><span>23</span></div>
-    <div class="tile tile-large tile-last"><span>24</span></div>
-  </div>
-</div>
-
+<div id="adventCalendar" class="container advent-calendar"></div>
 <div class="advent-calendar-footer"></div>
 
 <script>
   const currentDate = new Date();
-
   document.getElementById("datum").innerHTML = currentDate.toISOString();
 
-  console.log("INTERNAL", currentDate);
+  const dateArray = [...Array(25).keys()].slice(1);
+
+  function createDateArray() {
+    for (let date in dateArray) {
+      let newElement = document.createElement("div");
+      newElement.id = dateArray[date].toString();
+      /*      newElement.innerHTML = dateArray[date].toString();*/
+      if (
+        date == 2 ||
+        date == 4 ||
+        date == 6 ||
+        date == 11 ||
+        date == 13 ||
+        date == 15 ||
+        date == 20 ||
+        date == 22 ||
+        date == 24
+      ) {
+        newElement.className = "tile tile-large";
+      } else {
+        newElement.className = "tile tile-small";
+      }
+      document.getElementById("adventCalendar").appendChild(newElement);
+    }
+  }
+</script>
+<script>
+  createDateArray();
 </script>
 
 <style>
@@ -82,11 +65,8 @@
     width: 50rem;
     margin: 0 auto 3rem;
     padding-bottom: 3rem;
-  }
-
-  .advent-calendar-row {
     display: flex;
-    margin-top: 3rem;
+    flex-wrap: wrap;
   }
 
   .tile {
@@ -96,6 +76,7 @@
     background-origin: content-box;
     background-position: center;
     position: relative;
+    margin-bottom: 2rem;
   }
 
   .tile > span {
