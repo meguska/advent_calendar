@@ -1,28 +1,129 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block content %}
+<div class="container ">
+  <div class="row">
+    <div class="col-md-12">
+      <p>Dnes je <span id="datum"></span></p>
+    </div>
+  </div>
+</div>
+<div class="container ">
+  <div class="row">
+    <div class="col-md-12">
+      <p>
+        Zažijte tu tolik očekávanou atmosféru Vánoc plnou radosti, klidu a
+        pohody na vlastní kůži. Nenechte se rozhodit stresem, shonem a
+        nekonečným ruchem.
+      </p>
+      <p>
+        Zapojte své děti do Vánočních aktivit a společně odhalte pravé kouzlo
+        Vánoc. Být spolu a šťastní!
+      </p>
+    </div>
+  </div>
+</div>
 
-{% block content %}
-<h1>Adventní kalendář</h1>
-<div>Dnes je <span id="datum"></span></div>
-<h4>1</h4>
-<h4>2</h4>
-<h4>3</h4>
-<h4>4</h4>
-<h4>5</h4>
-<h4>6</h4>
-<h4>7</h4>
-<h4>8</h4>
-<h4>9</h4>
+<div class="advent-calendar-footer"></div>
 
-<!-- Scripts -->
+<div class="container advent-calendar ">
+  <div class="advent-calendar-row">
+    <div class="tile tile-small"><span class="test">1</span></div>
+    <div class="tile tile-small tile-center">2</div>
+    <div class="tile tile-large tile-last">3</div>
+  </div>
+  <div class="advent-calendar-row">
+    <div class="tile tile-small">4</div>
+    <div class="tile tile-large tile-center">5</div>
+    <div class="tile tile-small tile-last">6</div>
+  </div>
+  <div class="advent-calendar-row">
+    <div class="tile tile-large">7</div>
+    <div class="tile tile-small tile-center">8</div>
+    <div class="tile tile-small tile-last">9</div>
+  </div>
+  <div class="advent-calendar-row">
+    <div class="tile tile-small">10</div>
+    <div class="tile tile-small tile-center">11</div>
+    <div class="tile tile-large tile-last">12</div>
+  </div>
+  <div class="advent-calendar-row">
+    <div class="tile tile-small">13</div>
+    <div class="tile tile-large tile-center">14</div>
+    <div class="tile tile-small tile-last">15</div>
+  </div>
+  <div class="advent-calendar-row">
+    <div class="tile tile-large">16</div>
+    <div class="tile tile-small tile-center">17</div>
+    <div class="tile tile-small tile-last">18</div>
+  </div>
+  <div class="advent-calendar-row">
+    <div class="tile tile-small">19</div>
+    <div class="tile tile-large tile-center">20</div>
+    <div class="tile tile-small tile-last">21</div>
+  </div>
+  <div class="advent-calendar-row">
+    <div class="tile tile-small">22</div>
+    <div class="tile tile-small tile-center">23</div>
+    <div class="tile tile-large tile-last">24</div>
+  </div>
+</div>
+
+<div class="advent-calendar-footer"></div>
 
 <script>
-    const currentDate = new Date();
+  const currentDate = new Date();
 
-    document.getElementById("datum").innerHTML = currentDate.toISOString();
+  document.getElementById("datum").innerHTML = currentDate.toISOString();
 
-    console.log('INTERNAL', currentDate);
+  console.log("INTERNAL", currentDate);
 </script>
 
+<style>
+  .test {
+    font-family: "Impact";
+  }
+  .advent-calendar {
+    width: 50rem;
+    margin: 0 auto 3rem;
+    padding-bottom: 3rem;
+  }
 
+  .advent-calendar-row {
+    display: flex;
+    margin-top: 3rem;
+  }
+
+  .tile {
+    height: 10rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-position: center;
+  }
+
+  .tile-small {
+    width: 25%;
+    background-image: url("../static/minbox.png");
+  }
+
+  .tile-large {
+    width: 50%;
+    background-image: url("../static/maxbox.png");
+  }
+/*
+  .tile-center {
+    background-position: center;
+  }
+
+  .tile-last {
+    background-position: right;
+  }*/
+
+  .advent-calendar-footer {
+    height: 0.3rem;
+    width: 40%;
+    background-color: orange;
+    margin: 2rem auto 3rem;
+  }
+</style>
 
 {% endblock %}

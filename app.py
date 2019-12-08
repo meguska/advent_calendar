@@ -19,6 +19,11 @@ def home():
 def sdetmi():
    return render_template("sdetmi.html")
 
+@app.route('/pernicky/<id>', methods=['GET'])
+def pernicky(id):
+    #pernicky = db.pernicky(id)
+    return render_template("pernicky.html")
+
 @app.route('/singles/')
 def singles():
    return render_template("singles.html")
