@@ -31,7 +31,7 @@
     document.getElementById(`day-${currentDay.toString()}`).className =
       "tile tile-today-small";
     document.getElementById(`a-day-${currentDay.toString()}`).href =
-      "{{ url_for('singles')}}";
+      "{{ url_for('pernicek8')}}";
 
     const tiles = document
       .getElementById("adventCalendar")
@@ -66,6 +66,11 @@
     background-position: center;
     position: relative;
     margin-bottom: 2rem;
+  }
+
+  .tile:hover {
+    opacity: 0.4;
+    margin: 0;
   }
 
   .tile > span {
