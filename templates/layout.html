@@ -9,12 +9,18 @@
      <!-- Bootstrap CSS -->
      <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
      <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+     <style>
+     .hompage_content {
+       width:90%;
+       max-width:800px;
+       margin:0 auto;
+     }
+     </style>
   
 
 </head>
 <body style="background-color:white;">
-    <a class="navbar-brand uzke offset-1" href="{{ url_for('home') }}"><img src="/static/logo.jpg" class="img-fluid" alt="LOGO" width=60px></a>
-    <a class="navbar-brand" href="{{ url_for('home') }}"><h5 style="color:black;">Adventní Kalendář</h5></a>
+    <a class="navbar-brand" href="{{ url_for('home') }}"><h6 style="color:black;">Za klidné Vánoce</h6></a>
     <br>
 
       {% block content %}
