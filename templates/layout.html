@@ -11,12 +11,10 @@
      <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
   
 
-
 </head>
 <body style="background-color:white;">
-
-
-
+    <a class="navbar-brand uzke offset-1" href="{{ url_for('home') }}"><img src="/static/logo.jpg" class="img-fluid" alt="LOGO" width=60px></a>
+    <a class="navbar-brand" href="{{ url_for('home') }}"><h5>Adventní Kalendář</h5></a>
 
       {% block content %}
 
