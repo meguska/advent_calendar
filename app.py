@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+#from models import pernicky
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -18,6 +19,11 @@ def home():
 @app.route('/sdetmi/')
 def sdetmi():
    return render_template("sdetmi.html")
+
+@app.route('/pernicky/<id>', methods=['GET'])
+def pernicky(id):
+    #pernicky = db.pernicky(id)
+    return render_template("pernicky.html")
 
 @app.route('/singles/')
 def singles():
