@@ -2,18 +2,6 @@
 <div class="container ">
   <div class="row">
     <div class="col-md-12">
-      <p>Dnes je <span id="datum"></span></p>
-    </div>
-  </div>
-</div>
-<div class="container ">
-  <div class="row">
-    <div class="col-md-12">
-      <p>
-        Zažijte tu tolik očekávanou atmosféru Vánoc plnou radosti, klidu a
-        pohody na vlastní kůži. Nenechte se rozhodit stresem, shonem a
-        nekonečným ruchem.
-      </p>
       <p>
         Zapojte své děti do Vánočních aktivit a společně odhalte pravé kouzlo
         Vánoc. Být spolu a šťastní!
@@ -21,45 +9,57 @@
     </div>
   </div>
 </div>
-{%for i in pole%}
-{{i}},
-{%endfor%}
+
 <div class="advent-calendar-footer"></div>
-<div id="adventCalendar" class="container advent-calendar"></div>
+<div id="adventCalendar" class="container advent-calendar">
+  {%for i in pole%}
+
+  <div class="tile tile-small" id="day-{{i}}" data-day="{{i}}">
+    <a href="#">{{i}}</a>
+  </div>
+
+  {%endfor%}
+</div>
 <div class="advent-calendar-footer"></div>
 
 <script>
   const currentDate = new Date();
-  document.getElementById("datum").innerHTML = currentDate.toISOString();
+  const currentDay = currentDate.getDate();
+  const dateWithLargeBox = [2, 4, 6, 11, 13, 15, 20, 22, 24];
 
-  const dateArray = [...Array(25).keys()].slice(1);
+  function openPresents() {
+    document.getElementById(`day-${currentDay.toString()}`).className =
+      "tile tile-today-small";
+    document.getElementById(
+      `day-${currentDay.toString()}`
+    ).href = `{{ url_for('singles')}}`;
 
-  function createDateArray() {
-    for (let date in dateArray) {
-      let newElement = document.createElement("div");
-      newElement.id = dateArray[date].toString();
-      /*      newElement.innerHTML = dateArray[date].toString();*/
-      if (
-        date == 2 ||
-        date == 4 ||
-        date == 6 ||
-        date == 11 ||
-        date == 13 ||
-        date == 15 ||
-        date == 20 ||
-        date == 22 ||
-        date == 24
-      ) {
-        newElement.className = "tile tile-large";
-      } else {
-        newElement.className = "tile tile-small";
+    const tiles = document
+      .getElementById("adventCalendar")
+      .getElementsByClassName("tile");
+
+    for (let tile of tiles) {
+      const tileDay = tile.id.substring(4);
+      if (tileDay < currentDay) {
+        document.getElementById(tile.id).className = "tile tile-past-small";
       }
-      document.getElementById("adventCalendar").appendChild(newElement);
     }
+
+    /*    for (let date of pole) {
+      if (date < currentDay) {
+        if (date === dateWithLargeBox) {
+          document.getElementById(date.toString()).className =
+            "tile tile-past-large";
+        } else {
+          document.getElementById(date.toString()).className =
+            "tile tile-past-small";
+        }
+      }
+    }*/
   }
 </script>
 <script>
-  createDateArray();
+  openPresents();
 </script>
 
 <style>
@@ -94,6 +94,11 @@
     background-image: url("../static/minbox.png");
   }
 
+  .tile-past-small {
+    width: 25%;
+    background-image: url("../static/minboxopen.png");
+  }
+
   .tile-small > span {
     left: 2.8rem;
   }
@@ -103,8 +108,23 @@
     background-image: url("../static/maxbox.png");
   }
 
+  .tile-past-large {
+    width: 50%;
+    background-image: url("../static/maxboxopen.png");
+  }
+
   .tile-large > span {
     left: 3rem;
+  }
+
+  .tile-today-small {
+    width: 25%;
+    background-image: url("../static/mintoday.png");
+  }
+
+  .tile-today-large {
+    width: 25%;
+    background-image: url("../static/maxtoday.png");
   }
 
   .advent-calendar-footer {
