@@ -4,6 +4,8 @@ from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import random, array
+import databaza
+from databaza import pernicky
 #from models import pernicky
 
 app = Flask(__name__)
@@ -23,11 +25,14 @@ def sdetmi():
     random.shuffle(pole)
     return render_template("sdetmi.html", pole=pole)
 
-@app.route('/pernicky/<id>', methods=['GET'])
-def pernicky(id):
-
-    #pernicky = db.pernicky(id)
+app.route('/pernicky/')
+def pernicky1():
     return render_template("pernicky.html")
+
+@app.route('/pernicky/<ID>', methods=['GET'])
+def pernicky(ID):
+    pernicky = databaza.pernicky(ID)
+    return render_template("pernicky.html", databaza=pernicky, pernicky=pernicky)
 
 @app.route('/pernicek8/')
 def pernicek8():
