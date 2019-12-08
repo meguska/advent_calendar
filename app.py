@@ -5,8 +5,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import random, array
 import databaza
-from databaza import pernicky
-#from models import pernicky
+from databaza import pernicky1
+
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -26,13 +26,13 @@ def sdetmi():
     return render_template("sdetmi.html", pole=pole)
 
 app.route('/pernicky/')
-def pernicky1():
+def pernicky2():
     return render_template("pernicky.html")
 
 @app.route('/pernicky/<ID>', methods=['GET'])
 def pernicky(ID):
-    pernicky = databaza.pernicky(ID)
-    return render_template("pernicky.html", databaza=pernicky, pernicky=pernicky)
+    pernicky = databaza.pernicky1(ID)
+    return render_template("pernicky.html", databaza=pernicky1, pernicky=pernicky)
 
 @app.route('/pernicek8/')
 def pernicek8():

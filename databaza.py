@@ -1,6 +1,8 @@
 import csv
 import pandas
  
-pernicky= pandas.read_csv('pernicky_data.csv', index_col='ID', encoding='utf-8')
- 
-print(pernicky)
+pernicky1= pandas.read_csv('pernicky_data.csv', encoding='utf-8')
+colu= pernicky1.columns
+
+neviem= pernicky1[['ID', 'Aktivita']]
+print(neviem)
