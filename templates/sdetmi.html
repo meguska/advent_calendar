@@ -3,5 +3,16 @@
 {% block content %}
 <h4>1</h4>
 
+<!-- Scripts -->
+
+<script>
+    const currentDate = new Date();
+
+    document.getElementById("datum").innerHTML = currentDate.toISOString();
+
+    console.log('INTERNAL', currentDate);
+</script>
+
+{% endblock %}
 
 {% endblock %}
