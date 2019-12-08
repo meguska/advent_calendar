@@ -15,7 +15,7 @@
   {%for i in pole%}
 
   <div class="tile tile-small" id="day-{{i}}" data-day="{{i}}">
-    <a href="#"><span class="tile-number">{{i}}</span></a>
+    <a href="#" id="a-day-{{i}}"><span class="tile-number">{{i}}</span></a>
   </div>
 
   {%endfor%}
@@ -30,7 +30,7 @@
   function openPresents() {
     document.getElementById(`day-${currentDay.toString()}`).className =
       "tile tile-today-small";
-    document.getElementById(`day-${currentDay.toString()}`).href =
+    document.getElementById(`a-day-${currentDay.toString()}`).href =
       "{{ url_for('singles')}}";
 
     const tiles = document
