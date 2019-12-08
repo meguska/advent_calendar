@@ -1,22 +1,38 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<br>
+<div class="container ">
+  <div class="row">
+    <div class="col-md-12">
+           <p>Proč to děláme</p>
+          </div>
+        </div>
+    </div>
   </div>
 </div>
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+<br>
+<div class="card-deck">
+    <div class="col-sm offset-1">
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">S dětmi</h5>
+        <p class="card-text">xyz</p>
+        <a href="/sdetmi" class="btn btn-outline-primary">Zajímá mě</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">Singles</h5>
+        <p class="card-text">xyz</p>
+        <a href="/singles" class="btn btn-outline-primary">Zajímá mě</a>
+        </div>
+      </div>
+    </div>
 </div>
 
 {% endblock %}
